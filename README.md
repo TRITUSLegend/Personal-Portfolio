@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+<h1 align="center">🌐 Aditya Raj Kar - Personal Portfolio</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <em>B.Tech CSE (IoT) @ VIT Vellore | Aspiring Cybersecurity Expert</em>  
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+### 🖥️ Live Demo
 
-### `npm start`
+🔗 [View Portfolio](https://personal-portfolio-aditya-raj-kars-projects.vercel.app)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 About the Project
 
-### `npm test`
+This is my personal portfolio website built using **React.js** and styled with **CSS Modules**, featuring:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-  Dynamic typewriter animation
+-  Interactive Vanta.js particle background
+-  Scroll-based smooth navigation
+-  Projects, experience, and contact sections
+-  Fully responsive design
+-  Deployed on Vercel
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+aditya-portfolio/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/        # All individual sections
+│   ├── styles/            # CSS Modules for components
+│   ├── assets/            # Icons, images (if any)
+│   ├── App.jsx
+│   └── index.js
+├── package.json
+└── README.md
 
-### `npm run eject`
+````
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠 Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React.js** (frontend)
+- **CSS Modules** (component-level styling)
+- **Framer Motion** (animations)
+- **Typewriter Effect**
+- **Vanta.js** (background animation)
+- **React Icons**
+- **Vercel** (hosting)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📸 Screenshots
 
-## Learn More
+| Hero Section with Particle Background | Project Showcase |
+|--------------------------------------|------------------|
+| ![Hero](./assets/screenshot-hero.png) | ![Projects](./assets/screenshot-projects.png) |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🙋‍♂️ About Me
 
-### Code Splitting
+I'm **Aditya Raj Kar**, passionate about building impactful software and currently exploring IoT and Cybersecurity.  
+📫 Reach me at: [adityarajkar1105@gmail.com](mailto:adityarajkar1105@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🧩 How to Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/TRITUSLegend/aditya-portfolio.git
+cd aditya-portfolio
+npm install
+npm start
+````
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚡ Want to Build Your Own?
 
-### Advanced Configuration
+Feel free to fork this project, customize it, and build your own online presence!
+If you do, give this repo a ⭐️ and drop me a link to your version — I'd love to see it!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🔗 Connect with Me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/adityarajkar/)
+[![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat\&logo=github\&logoColor=white)](https://github.com/TRITUSLegend)
+[![Gmail](https://img.shields.io/badge/-Gmail-D14836?style=flat\&logo=gmail\&logoColor=white)](mailto:adityarajkar1105@gmail.com)
+[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=flat\&logo=instagram\&logoColor=white)](https://instagram.com/ark11_05)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Designed with ❤️ by Aditya Raj Kar
+
+```
