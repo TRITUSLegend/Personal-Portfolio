@@ -50,13 +50,6 @@ aditya-portfolio/
 
 ---
 
-## 📸 Screenshots
-
-| Hero Section with Particle Background | Project Showcase |
-|--------------------------------------|------------------|
-| ![Hero](./assets/screenshot-hero.png) | ![Projects](./assets/screenshot-projects.png) |
-
----
 
 ## 🙋‍♂️ About Me
 
