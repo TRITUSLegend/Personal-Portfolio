@@ -1,0 +1,50 @@
+/* src/styles/Hero.module.css */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.heading {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.name {
+  color: #64ffda;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.name:hover {
+  text-shadow: 0 0 10px #64ffda, 0 0 20px #64ffda;
+}
+
+.typewriter {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #00e5ff;
+  margin-top: 1rem;
+  min-height: 2.5rem;
+}
