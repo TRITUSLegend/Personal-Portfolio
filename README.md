@@ -1,9 +1,5 @@
 <h1 align="center">🌐 Aditya Raj Kar - Personal Portfolio</h1>
 
-<p align="center">
-  <em>B.Tech CSE (IoT) @ VIT Vellore | Aspiring Cybersecurity Expert</em>  
-</p>
-
 
 ### 🖥️ Live Demo
 
