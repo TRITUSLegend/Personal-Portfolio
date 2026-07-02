@@ -12,7 +12,6 @@ const fadeIn = {
 const socials = [
   { label: 'GitHub', url: 'https://github.com/TRITUSLegend' },
   { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adityarajkar' },
-  { label: 'Instagram', url: 'https://www.instagram.com/ark11_05/?hl=en' },
   { label: 'Email', url: 'mailto:adityarajkar1105@gmail.com' },
 ];
 

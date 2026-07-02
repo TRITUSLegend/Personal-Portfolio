@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
@@ -34,15 +34,6 @@ const Navbar = () => {
           aria-label="LinkedIn"
         >
           <FaLinkedinIn />
-        </a>
-        <a
-          href="https://www.instagram.com/ark11_05/?hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconBtn}
-          aria-label="Instagram"
-        >
-          <FaInstagram />
         </a>
         <Link
           to="contact"
