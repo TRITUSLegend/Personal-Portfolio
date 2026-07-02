@@ -1,7 +1,6 @@
 {
   "name": "aditya-portfolio",
   "version": "0.1.0",
-  "homepage": "https://TRITUSLegend.github.io/Personal-Portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
