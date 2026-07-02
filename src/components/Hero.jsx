@@ -39,7 +39,7 @@ const Hero = () => {
 
         <div className={styles.buttons}>
           <a
-            href="https://drive.google.com/file/d/13LfpYfgFNgryEmP3s_G3VxfWQYqZJ35e/view?usp=sharing"
+            href="https://drive.google.com/file/d/1bslTWY5R3P18zg3dimJBNumfmaKM7V5I/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.termBtn} ${styles.termBtnPrimary}`}
