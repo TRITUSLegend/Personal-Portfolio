@@ -27,6 +27,12 @@
   background: rgba(10, 10, 10, 0.5);
   max-width: 700px;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #00FF41;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
 }
 
 .cardTop {
