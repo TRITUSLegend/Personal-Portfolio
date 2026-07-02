@@ -1,58 +1,97 @@
-// src/components/Skills.jsx
 import React from 'react';
-import styles from '../styles/Skills.module.css';
 import { motion } from 'framer-motion';
-import {
-  SiReact, SiFirebase, SiNodedotjs, SiMysql,
-  SiCss3, SiHtml5, SiJavascript, SiCplusplus,
-  SiPython, SiArduino, SiGit, SiVscodium, // for "VS Code" icon (same logo)
-  SiC
+import styles from '../styles/Skills.module.css';
 
-} from 'react-icons/si';
-
-const skills = [
-  { icon: <SiC />, label: 'C' },
-  { icon: <SiCplusplus />, label: 'C++' },
-  { icon: <SiHtml5 />, label: 'HTML5' },
-  { icon: <SiCss3 />, label: 'CSS3' },
-  { icon: <SiJavascript />, label: 'JavaScript' },
-  { icon: <SiReact />, label: 'React.js' },
-  { icon: <SiNodedotjs />, label: 'Node.js' },
-  { icon: <SiFirebase />, label: 'Firebase' },
-  { icon: <SiGit />, label: 'Git' },
-  { icon: <SiVscodium />, label: 'VS Code' },
-  { icon: <SiArduino />, label: 'Arduino' },
-  { icon: <SiPython />, label: 'Python' }
-  
+const categories = [
+  {
+    title: 'Full-Stack Development',
+    bullets: [
+      'Building web apps with React, Next.js, FastAPI',
+      'Database design with PostgreSQL, Prisma',
+      'Secure auth with bcrypt, SMTP pipelines',
+    ],
+    tags: ['React', 'Next.js', 'FastAPI', 'TypeScript', 'JavaScript', 'PostgreSQL', 'Prisma'],
+  },
+  {
+    title: 'IoT & Automation',
+    bullets: [
+      'ESP32/ESP8266 sensor integration',
+      'Real-time cloud dashboards',
+      'Smart automation',
+    ],
+    tags: ['ESP32', 'Arduino', 'Firebase', 'Wokwi', 'ThingSpeak'],
+  },
+  {
+    title: 'AI & Data',
+    bullets: [
+      'Multi-agent workflows with LangGraph',
+      'RAG pipelines with ChromaDB',
+      'Data collection and analysis',
+    ],
+    tags: ['LangGraph', 'Gemini API', 'ChromaDB', 'Python'],
+  },
+  {
+    title: 'DevOps & Monitoring',
+    bullets: [
+      'Containerized deployments',
+      'Observability stacks',
+    ],
+    tags: ['Docker', 'Prometheus', 'Grafana', 'Git'],
+  },
 ];
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: 'easeOut' },
+};
 
 const Skills = () => {
   return (
-    <section id="skills" className={styles.skills}>
-      <div className={styles.bgGlow} />
-
-      <motion.div
-        className={styles.container}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        <h2 className={styles.heading}>-Skills-</h2>
-        <div className={styles.grid}>
-          {skills.map((skill, i) => (
-            <motion.div
-              key={i}
-              className={styles.card}
-              whileHover={{ scale: 1.12 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <span className={styles.icon}>{skill.icon}</span>
-              <p>{skill.label}</p>
-            </motion.div>
-          ))}
-        </div>
+    <section className={styles.section} id="skills">
+      <motion.div {...fadeIn}>
+        <p className={styles.sectionLabel}>{'// SECTION_01'}</p>
+        <h2 className={styles.sectionTitle}>WHAT I DO.</h2>
+        <p className={styles.subtitle}>
+          Full-stack developer building scalable web apps, real-time IoT systems,
+          and AI-driven workflows.
+        </p>
+        <div className={styles.divider} />
       </motion.div>
+
+      <div className={styles.grid}>
+        {categories.map((cat, i) => (
+          <motion.div
+            key={cat.title}
+            className={styles.category}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+          >
+            <h3 className={styles.categoryTitle}>
+              <span className={styles.categoryPrefix}>&gt; </span>
+              {cat.title}
+            </h3>
+
+            <div className={styles.bulletList}>
+              {cat.bullets.map((b) => (
+                <p key={b} className={styles.bullet}>
+                  <span className={styles.bulletPrefix}>-</span>
+                  {b}
+                </p>
+              ))}
+            </div>
+
+            <div className={styles.tags}>
+              {cat.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>{tag}</span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };

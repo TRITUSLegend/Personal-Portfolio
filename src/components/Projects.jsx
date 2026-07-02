@@ -1,117 +1,127 @@
-// src/components/Projects.jsx
 import React from 'react';
-import styles from '../styles/Projects.module.css';
 import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import styles from '../styles/Projects.module.css';
 
 const projects = [
   {
-    title: "Bus Credit System",
+    name: 'OpinionMap',
+    variable: 'opinionMap',
+    tools: ['React', 'FastAPI', 'LangGraph', 'Gemini', 'ChromaDB', 'Docker'],
     description:
-      "A smart ID-linked wallet system to replace cash-based shuttle fares. It reduces waiting time by debiting instantly when students board and synchronizes with shuttle vendors automatically.",
-    tech: ["HTML", "CSS", "JavaScript", "MySQL"],
-    github: "https://github.com/TRITUSLegend/Bus-Credit-System-BCS-",
+      'A containerized full-stack web application with a multi-agent AI workflow. Autonomously collects, processes, and analyzes unstructured social media data. Features a RAG pipeline for grounded market intelligence reports.',
+    github: 'https://github.com/TRITUSLegend/OpinionMap',
+    live: 'https://opinionmap.netlify.app',
   },
   {
-    title: "IoT Sensor Monitoring",
+    name: 'BUSIT',
+    variable: 'busit',
+    tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
     description:
-      "A real-time ESP32 and DHT22 system that tracks temperature & humidity using a cloud dashboard with alert thresholds and historical graphing — all simulated via Wokwi.",
-    tech: ["ESP32", "DHT22", "ThingSpeak", "Wokwi"],
-    github: "https://github.com/TRITUSLegend/Temp.-and-Humidity-Real-time-Monitoring",
+      'A digital wallet platform to digitize campus transit. Built an in-house browser-based camera scanner and dynamic QR generation. Secure PostgreSQL database with bcrypt, automated SMTP email pipeline for receipts.',
+    github: 'https://github.com/TRITUSLegend/busit-web',
+    live: 'https://busit-web.vercel.app',
   },
   {
-    title: "Smart Room Dashboard",
+    name: 'Smart Room Dashboard',
+    variable: 'smartRoom',
+    tools: ['ESP32', 'Firebase', 'HTML', 'JavaScript'],
     description:
-      "A real-time IoT dashboard that monitors room environmental data—temperature, humidity, lighting, and device status—via ESP32 sensors, with interactive controls and cloud visualization.",
-    tech: ["ESP32", "Firebase", "Wowki", "JavaScript", "HTML", "CSS"],
-    github: "https://github.com/TRITUSLegend/smart-room-dashboard",
-    live: "https://trituslegend.github.io/smart-room-dashboard/"
-  }
+      'A real-time IoT dashboard monitoring room environmental data via ESP32 sensors with interactive controls and cloud visualization.',
+    github: 'https://github.com/TRITUSLegend/smart-room-dashboard',
+    live: 'https://trituslegend.github.io/smart-room-dashboard/',
+  },
 ];
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: 'easeOut' },
+};
 
 const Projects = () => {
   return (
-    <section id="projects" className={styles.projects}>
-      <div className={styles.container}>
-        <h2 className={styles.heading}>
-          <span className={styles.subtle}>featured</span> Projects
-        </h2>
-        <div className={styles.bgLight1} />
-        <div className={styles.bgLight2} />
+    <section className={styles.section} id="projects">
+      <motion.div {...fadeIn}>
+        <p className={styles.sectionLabel}>{'// SECTION_02'}</p>
+        <h2 className={styles.sectionTitle}>PROJECTS.</h2>
+      </motion.div>
 
+      <div className={styles.grid}>
         {projects.map((proj, i) => (
           <motion.div
-            key={i}
-            className={`${styles.projectBlock} ${i % 2 !== 0 ? styles.reverse : ""}`}
-            initial={{ opacity: 0, y: 80 }}
+            key={proj.name}
+            className={styles.card}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: i * 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
           >
-            <div className={styles.content}>
-              <motion.h3
-                className={styles.title}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                {proj.title}
-              </motion.h3>
-
-              <motion.p
-                className={styles.desc}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                {proj.description}
-              </motion.p>
-
-              <motion.ul
-                className={styles.techList}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                {proj.tech.map((t, idx) => (
-                  <motion.li
-                    key={idx}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {t}
-                  </motion.li>
-                ))}
-              </motion.ul>
-
-              <div className={styles.links}>
-                <motion.a
-                  href={proj.github}
-                  className={styles.ghostBtn}
-                  target="_blank"
-                  rel="noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <FaGithub /> Github
-                </motion.a>
-
-                {proj.live && (
-                  <motion.a
-                    href={proj.live}
-                    className={styles.ghostBtn}
-                    target="_blank"
-                    rel="noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    🌐 Live Demo
-                  </motion.a>
-                )}
+            <div className={styles.cardTop}>
+              <div className={styles.dots}>
+                <span className={`${styles.dot} ${styles.dotRed}`} />
+                <span className={`${styles.dot} ${styles.dotYellow}`} />
+                <span className={`${styles.dot} ${styles.dotGreen}`} />
               </div>
+              <span className={styles.cardName}>{proj.name}</span>
             </div>
 
-            <div className={styles.accentLayer} />
+            <div className={styles.cardBody}>
+              <p className={styles.codeLine}>
+                <span className={styles.keyword}>const </span>
+                <span className={styles.variable}>{proj.variable} </span>
+                <span className={styles.keyword}>= </span>
+                <span className={styles.punctuation}>{'{'}</span>
+              </p>
+              <p className={styles.codeLine}>
+                {'  '}<span className={styles.key}>name: </span>
+                <span className={styles.string}>&apos;{proj.name}&apos;</span>
+                <span className={styles.punctuation}>,</span>
+              </p>
+              <p className={styles.codeLine}>
+                {'  '}<span className={styles.key}>tools: </span>
+                <span className={styles.punctuation}>[</span>
+                <span className={styles.string}>
+                  {proj.tools.map((t) => `'${t}'`).join(', ')}
+                </span>
+                <span className={styles.punctuation}>]</span>
+                <span className={styles.punctuation}>,</span>
+              </p>
+              <p className={styles.codeLine}>
+                {'  '}<span className={styles.key}>description: </span>
+                <span className={styles.cyan}>&apos;{proj.description}&apos;</span>
+                <span className={styles.punctuation}>,</span>
+              </p>
+              <p className={styles.codeLine}>
+                <span className={styles.punctuation}>{'};'}</span>
+              </p>
+            </div>
+
+            {(proj.github || proj.live) && (
+              <div className={styles.cardFooter}>
+                {proj.github && (
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkBtn}
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                )}
+                {proj.live && (
+                  <a
+                    href={proj.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkBtn}
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
+              </div>
+            )}
           </motion.div>
         ))}
       </div>

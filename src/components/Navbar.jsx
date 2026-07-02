@@ -1,20 +1,59 @@
-// src/components/Navbar.jsx
-import React from 'react';
-import styles from '../styles/Navbar.module.css';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>Aditya</div>
-      <ul className={styles.navLinks}>
-        <li><Link to="hero" smooth={true} duration={500}>Home</Link></li>
-        <li><Link to="about" smooth={true} duration={500}>About</Link></li>
-        <li><Link to="skills" smooth={true} duration={500}>Skills</Link></li>
-        <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
-        <li><Link to="experience" smooth={true} duration={500}>Experience</Link></li>
-        <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
-      </ul>
+    <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
+      <span className={styles.logo}>&gt; ADITYA_RAJ_KAR</span>
+
+      <div className={styles.navRight}>
+        <a
+          href="https://github.com/TRITUSLegend"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconBtn}
+          aria-label="GitHub"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/adityarajkar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconBtn}
+          aria-label="LinkedIn"
+        >
+          <FaLinkedinIn />
+        </a>
+        <a
+          href="https://www.instagram.com/ark11_05/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconBtn}
+          aria-label="Instagram"
+        >
+          <FaInstagram />
+        </a>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={600}
+          offset={-60}
+          className={styles.contactBtn}
+        >
+          [ CONTACT ]
+        </Link>
+      </div>
     </nav>
   );
 };

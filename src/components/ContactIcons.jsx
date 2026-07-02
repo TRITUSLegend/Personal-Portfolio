@@ -1,49 +1,62 @@
-// src/components/ContactIcons.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from '../styles/ContactIcons.module.css';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
-const contacts = [
-  {
-    name: 'Gmail',
-    icon: <FaEnvelope />,
-    link: 'mailto:adityarajkar1105@gmail.com',
-  },
-  {
-    name: 'GitHub',
-    icon: <FaGithub />,
-    link: 'https://github.com/TRITUSLegend',
-  },
-  {
-    name: 'LinkedIn',
-    icon: <FaLinkedin />,
-    link: 'https://www.linkedin.com/in/adityarajkar/',
-  },
-  {
-    name: 'Instagram',
-    icon: <FaInstagram />,
-    link: 'https://www.instagram.com/ark11_05/',
-  },
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: 'easeOut' },
+};
+
+const socials = [
+  { label: 'GitHub', url: 'https://github.com/TRITUSLegend' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adityarajkar' },
+  { label: 'Instagram', url: 'https://www.instagram.com/ark11_05/?hl=en' },
+  { label: 'Email', url: 'mailto:adityarajkar1105@gmail.com' },
 ];
 
 const ContactIcons = () => {
   return (
-    <section id="contact" className={styles.contact}>
-      <h2 className={styles.heading}>Let's Connect</h2>
-      <div className={styles.cardContainer}>
-        {contacts.map((c, i) => (
+    <section className={styles.section} id="contact">
+      <motion.div {...fadeIn}>
+        <p className={styles.sectionLabel}>{'// SECTION_04'}</p>
+        <h2 className={styles.sectionTitle}>GET IN TOUCH.</h2>
+        <p className={styles.subtitle}>
+          Got a question, proposal, or project? Feel free to reach out.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+      >
+        <a href="mailto:adityarajkar1105@gmail.com" className={styles.email}>
+          adityarajkar1105@gmail.com
+        </a>
+      </motion.div>
+
+      <motion.div
+        className={styles.socials}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+      >
+        {socials.map((s) => (
           <a
-            href={c.link}
-            key={i}
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
+            key={s.label}
+            href={s.url}
+            target={s.url.startsWith('mailto') ? undefined : '_blank'}
+            rel={s.url.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+            className={styles.socialLink}
           >
-            <div className={styles.icon}>{c.icon}</div>
-            <div className={styles.label}>{c.name}</div>
+            {s.label}
           </a>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

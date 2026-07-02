@@ -1,38 +1,92 @@
-/* src/styles/Navbar.module.css */
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 16px 40px;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(12px);
-  background: rgba(10, 25, 47, 0.6);
-  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  z-index: 99;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 60px);
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.3s ease;
 }
 
+.navbarScrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #64ffda;
-  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: #00FF41;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
-.navLinks {
-  list-style: none;
+.navRight {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 8px;
 }
 
-.navLinks li {
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #e0e0e0;
+  font-size: 16px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.navLinks li:hover {
-  color: #64ffda;
+.iconBtn:hover {
+  border-color: #00FF41;
+  color: #00FF41;
+}
+
+.contactBtn {
+  display: flex;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  padding: 8px 16px;
+  border: 1px solid #00FF41;
+  background: transparent;
+  color: #00FF41;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-left: 8px;
+}
+
+.contactBtn:hover {
+  background-color: #00FF41;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 11px;
+  }
+
+  .contactBtn {
+    display: none;
+  }
+
+  .iconBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
 }
