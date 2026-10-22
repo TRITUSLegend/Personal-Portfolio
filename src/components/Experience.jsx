@@ -10,9 +10,9 @@ const fadeIn = {
 };
 
 const bullets = [
-  'Worked with ESP32/ESP8266/Arduino for IoT prototyping, sensor integration, and automation',
-  'Developed cloud dashboards for real-time data logging, visualization, and alerts',
-  'Documented processes for project clarity and knowledge sharing',
+  'Built a cloud-based dashboard for real-time sensor data logging and visualization, with threshold-based alerts to flag anomalous readings.',
+  'Developed sensor-integrated automation prototypes using ESP32 and Arduino, automating data collection and reducing manual monitoring effort.',
+  'Authored technical documentation for 3 automation workflows to support team onboarding and knowledge transfer.',
 ];
 
 const Experience = () => {
