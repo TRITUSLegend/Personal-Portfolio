@@ -4,39 +4,42 @@ import styles from '../styles/Skills.module.css';
 
 const categories = [
   {
-    title: 'Full-Stack Development',
+    title: 'Analytics & BI',
     bullets: [
-      'Building web apps with React, Next.js, FastAPI',
-      'Database design with PostgreSQL, Prisma',
-      'Secure auth with bcrypt, SMTP pipelines',
+      'Cleaning and joining multi-table data in SQL with DuckDB',
+      'Power BI star-schema models with DAX measures reconciled to SQL results',
+      'Revenue concentration, repeat-purchase and RFM-style customer analysis',
+      'Real-time sensor dashboards with threshold-based alerts on anomalous readings',
     ],
-    tags: ['React', 'Next.js', 'FastAPI', 'TypeScript', 'JavaScript', 'PostgreSQL', 'Prisma'],
+    tags: ['SQL', 'Power BI', 'DAX', 'DuckDB', 'PostgreSQL', 'MongoDB', 'Excel'],
   },
   {
-    title: 'IoT & Automation',
+    title: 'Data Science & ML',
     bullets: [
-      'ESP32/ESP8266 sensor integration',
-      'Real-time cloud dashboards',
-      'Smart automation',
+      'Data wrangling and exploratory analysis in Python with pandas',
+      'LightGBM models on checkout-time features, evaluated on a later-period test',
+      'Model explainability with SHAP',
+      'What-if scenarios to size the impact of an operational fix',
     ],
-    tags: ['ESP32', 'Arduino', 'Firebase', 'Wokwi', 'ThingSpeak'],
+    tags: ['Python', 'pandas', 'LightGBM', 'SHAP', 'Model Evaluation', 'Streamlit', 'Plotly'],
   },
   {
-    title: 'AI & Data',
+    title: 'AI & LLM Workflows',
     bullets: [
-      'Multi-agent workflows with LangGraph',
-      'RAG pipelines with ChromaDB',
-      'Data collection and analysis',
+      'Multi-agent LangGraph pipelines for market sentiment research',
+      'LLM integration with RAG and prompt engineering',
+      'Prompt-injection sanitization and deterministic quality checks on LLM output',
     ],
-    tags: ['LangGraph', 'Gemini API', 'ChromaDB', 'Python'],
+    tags: ['LangGraph', 'RAG', 'LLM Integration', 'Prompt Engineering'],
   },
   {
-    title: 'DevOps & Monitoring',
+    title: 'Engineering Foundations',
     bullets: [
-      'Containerized deployments',
-      'Observability stacks',
+      'Data structures & algorithms, OOP, DBMS and computer networks',
+      'REST APIs with FastAPI and JWT authentication',
+      'Deploying to Netlify, Vercel, Render and Streamlit Cloud',
     ],
-    tags: ['Docker', 'Prometheus', 'Grafana', 'Git'],
+    tags: ['C/C++', 'TypeScript', 'React', 'FastAPI', 'REST APIs', 'Git', 'GitHub'],
   },
 ];
 
@@ -54,8 +57,9 @@ const Skills = () => {
         <p className={styles.sectionLabel}>{'// SECTION_01'}</p>
         <h2 className={styles.sectionTitle}>WHAT I DO.</h2>
         <p className={styles.subtitle}>
-          Full-stack developer building scalable web apps, real-time IoT systems,
-          and AI-driven workflows.
+          Data analyst working in SQL, Python and Power BI: cleaning and joining raw
+          data, finding what drives revenue and retention, and turning each business
+          question into a metric and a recommended action.
         </p>
         <div className={styles.divider} />
       </motion.div>
