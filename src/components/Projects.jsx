@@ -5,11 +5,34 @@ import styles from '../styles/Projects.module.css';
 
 const projects = [
   {
+    name: 'CommerceLens',
+    variable: 'commerceLens',
+    tools: ['Python', 'SQL', 'DuckDB', 'pandas', 'LightGBM', 'SHAP', 'Power BI', 'DAX', 'Streamlit'],
+    description:
+      'E-commerce revenue and retention analytics. Cleaned and joined the raw order data in DuckDB SQL, resolving duplicate reviews and customer IDs, then built a Power BI report on a star-schema model with DAX measures reconciled to the SQL results, mapping each business question to a metric and a recommended action.',
+    findings: [
+      '99,441 orders across 9 tables',
+      '18 of 74 categories drive 80% of revenue',
+      '97% of customers buy only once',
+      'Late orders get 1–2 star reviews 62% of the time vs 9% on-time',
+      'What-if: rescuing half of late orders could prevent up to ~1,700 low reviews',
+      'At-risk order model (LightGBM + SHAP) on checkout-time features: ROC-AUC 0.61 on a later-period test',
+    ],
+    github: 'https://github.com/TRITUSLegend/CommerceLens',
+  },
+  {
     name: 'OpinionMap',
     variable: 'opinionMap',
-    tools: ['React', 'FastAPI', 'LangGraph', 'Gemini', 'ChromaDB', 'Docker'],
+    tools: ['LangGraph', 'ChromaDB', 'React', 'TypeScript', 'FastAPI', 'Docker'],
     description:
-      'A containerized full-stack web application with a multi-agent AI workflow. Autonomously collects, processes, and analyzes unstructured social media data. Features a RAG pipeline for grounded market intelligence reports.',
+      'Multi-agent market sentiment analysis platform. Scrapes multiple sources, runs NLP analysis and generates structured market research reports with PDF export. Supporting stack: React/TypeScript frontend with a FastAPI REST layer.',
+    pipeline: [
+      '6-node LangGraph pipeline over 7 scraped sources',
+      'Reviewer node enforces 5 deterministic quality checks and routes failing reports back for revision',
+      'Prompt-injection sanitization and exponential backoff on API failures',
+      '26 REST endpoints with JWT authentication',
+      '6 sequential dashboard queries refactored into a single scalar subquery',
+    ],
     github: 'https://github.com/TRITUSLegend/OpinionMap',
     live: 'https://opinionmap.netlify.app',
   },
@@ -32,6 +55,9 @@ const projects = [
     live: 'https://trituslegend.github.io/smart-room-dashboard/',
   },
 ];
+
+// Optional array fields, rendered as extra code lines only on projects that have them
+const listFields = ['findings', 'pipeline'];
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -93,6 +119,25 @@ const Projects = () => {
                 <span className={styles.cyan}>&apos;{proj.description}&apos;</span>
                 <span className={styles.punctuation}>,</span>
               </p>
+              {listFields
+                .filter((field) => proj[field])
+                .map((field) => (
+                  <React.Fragment key={field}>
+                    <p className={styles.codeLine}>
+                      {'  '}<span className={styles.key}>{field}: </span>
+                      <span className={styles.punctuation}>[</span>
+                    </p>
+                    {proj[field].map((item) => (
+                      <p key={item} className={styles.codeLine}>
+                        {'    '}<span className={styles.string}>&apos;{item}&apos;</span>
+                        <span className={styles.punctuation}>,</span>
+                      </p>
+                    ))}
+                    <p className={styles.codeLine}>
+                      {'  '}<span className={styles.punctuation}>],</span>
+                    </p>
+                  </React.Fragment>
+                ))}
               <p className={styles.codeLine}>
                 <span className={styles.punctuation}>{'};'}</span>
               </p>
