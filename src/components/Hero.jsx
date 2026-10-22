@@ -3,6 +3,15 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import styles from '../styles/Hero.module.css';
 
+const RESUME_URL =
+  'https://drive.google.com/file/d/1YUIBfrxyqb25o_wB2kEv1oNh8zHY3N5K/view?usp=sharing';
+
+const stats = [
+  { number: '99,441', label: 'Orders Analysed' },
+  { number: '4', label: 'Projects Built' },
+  { number: '8.44', label: 'CGPA' },
+];
+
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -33,13 +42,13 @@ const Hero = () => {
         </h1>
 
         <p className={styles.description}>
-          Full-stack developer building scalable web apps, real-time IoT systems,
-          and AI-driven workflows. Currently pursuing B.Tech at VIT Vellore.
+          Data analyst turning raw commerce and sensor data into decisions with
+          SQL, Python, Power BI and machine learning. B.Tech CSE (IoT) at VIT Vellore.
         </p>
 
         <div className={styles.buttons}>
           <a
-            href="https://drive.google.com/file/d/1K-hTn-w1BcqEDOveVhWghq4C0eNESEOg/view?usp=sharing"
+            href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.termBtn} ${styles.termBtnPrimary}`}
@@ -64,18 +73,12 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
       >
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>3+</div>
-          <div className={styles.statLabel}>Projects Built</div>
-        </div>
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>1</div>
-          <div className={styles.statLabel}>Internship</div>
-        </div>
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>8.44</div>
-          <div className={styles.statLabel}>CGPA</div>
-        </div>
+        {stats.map((s) => (
+          <div key={s.label} className={styles.stat}>
+            <div className={styles.statNumber}>{s.number}</div>
+            <div className={styles.statLabel}>{s.label}</div>
+          </div>
+        ))}
       </motion.div>
     </section>
   );

@@ -121,6 +121,16 @@
   .termBtn {
     text-align: center;
   }
+
+  /* Keep the widest stat (99,441) inside its column on narrow phones */
+  .stat {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .statNumber {
+    font-size: clamp(18px, 6vw, 32px);
+  }
 }
 
 .stackWrapper {
