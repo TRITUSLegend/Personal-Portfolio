@@ -1,89 +1,69 @@
-<h1 align="center">🌐 Aditya Raj Kar - Personal Portfolio</h1>
+# Aditya Raj Kar | Data Analyst Portfolio
 
+Personal portfolio of Aditya Raj Kar, a data analyst working in SQL, Python, Power BI and
+machine learning. B.Tech CSE (Internet of Things) at VIT Vellore.
 
-### 🖥️ Live Demo
+**Live site:** https://adityarajkar.netlify.app
 
-🔗 [View Portfolio](https://personal-portfolio-aditya-raj-kars-projects.vercel.app)  
+## Sections
 
----
+| Section | Contents |
+| --- | --- |
+| Hero | Analyst summary, resume link, headline stats |
+| What I Do | Skills grouped as Analytics & BI, Data Science & ML, AI & LLM Workflows and Engineering Foundations |
+| Projects | CommerceLens (e-commerce revenue and retention analytics), OpinionMap (market sentiment analysis), BUSIT, Smart Room Dashboard |
+| Experience | Software Intern, Perennial Systems Pvt. Ltd. |
+| Background | Education, certifications and leadership |
+| Get in Touch | Email, GitHub, LinkedIn and LeetCode |
 
-## 🚀 About the Project
+## Design
 
-This is my personal portfolio website built using **React.js** and styled with **CSS Modules**, featuring:
+A single-page, terminal-style layout: black background, `#00FF41` accent, Space Mono and Inter,
+square corners, `// SECTION_0N` labels, terminal-window cards with syntax-highlighted JS, a
+scanline overlay and fade-up animations on scroll.
 
--  Dynamic typewriter animation
--  Interactive Vanta.js particle background
--  Scroll-based smooth navigation
--  Projects, experience, and contact sections
--  Fully responsive design
--  Deployed on Vercel
+## Tech stack
 
----
+- **React 19** (Create React App)
+- **Framer Motion** for fade-up and staggered reveal animations
+- **react-scroll** for smooth scrolling between sections
+- **CSS Modules**, one stylesheet per component in `src/styles`
+- **react-icons**
+- Hosted on **Netlify** (`public/_redirects` handles single-page routing)
 
-## 📁 Folder Structure
+## Project structure
 
 ```
+public/
+  index.html       # title, meta description and Open Graph tags
+  _redirects       # Netlify single-page redirect
+src/
+  App.jsx          # section order and scanline overlay
+  components/      # Navbar, Hero, Skills, Projects, Experience, Background, ContactIcons, Footer
+  styles/          # CSS Modules; Shared.module.css holds terminal-card styles for newer sections
+```
 
-aditya-portfolio/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/        # All individual sections
-│   ├── styles/            # CSS Modules for components
-│   ├── assets/            # Icons, images (if any)
-│   ├── App.jsx
-│   └── index.js
-├── package.json
-└── README.md
+Site content lives in data arrays at the top of each component (for example `projects` in
+`Projects.jsx` and `categories` in `Skills.jsx`), so most updates are edits to those arrays.
 
-````
+## Run locally
 
-## 🛠 Tech Stack
-
-- **React.js** (frontend)
-- **CSS Modules** (component-level styling)
-- **Framer Motion** (animations)
-- **Typewriter Effect**
-- **Vanta.js** (background animation)
-- **React Icons**
-- **Vercel** (hosting)
-
----
-
-
-## 🙋‍♂️ About Me
-
-I'm **Aditya Raj Kar**, passionate about building impactful software and currently exploring IoT and Cybersecurity.  
-📫 Reach me at: [adityarajkar1105@gmail.com](mailto:adityarajkar1105@gmail.com)
-
----
-
-## 🧩 How to Run Locally
+Requires Node.js and npm.
 
 ```bash
-git clone https://github.com/TRITUSLegend/aditya-portfolio.git
-cd aditya-portfolio
+git clone https://github.com/TRITUSLegend/Personal-Portfolio.git
+cd Personal-Portfolio
 npm install
-npm start
-````
+npm start        # dev server on http://localhost:3000
+npm run build    # production build in build/
+```
 
----
+Netlify builds with `CI=true`, which turns ESLint warnings into build errors. Run
+`CI=true npm run build` locally to catch them before deploying.
 
-## ⚡ Want to Build Your Own?
+## Contact
 
-Feel free to fork this project, customize it, and build your own online presence!
-If you do, give this repo a ⭐️ and drop me a link to your version — I'd love to see it!
-
----
-
-## 🔗 Connect with Me
-
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/adityarajkar/)
-[![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat\&logo=github\&logoColor=white)](https://github.com/TRITUSLegend)
-[![Gmail](https://img.shields.io/badge/-Gmail-D14836?style=flat\&logo=gmail\&logoColor=white)](mailto:adityarajkar1105@gmail.com)
-[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=flat\&logo=instagram\&logoColor=white)](https://instagram.com/ark11_05)
-
----
-
-> Designed with ❤️ by Aditya Raj Kar
-
+- Email: [adityarajkar1105@gmail.com](mailto:adityarajkar1105@gmail.com)
+- GitHub: [TRITUSLegend](https://github.com/TRITUSLegend)
+- LinkedIn: [adityarajkar](https://www.linkedin.com/in/adityarajkar)
+- LeetCode: [TRITUSLegend](https://leetcode.com/u/TRITUSLegend/)
