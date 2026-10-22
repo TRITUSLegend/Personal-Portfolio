@@ -1,4 +1,4 @@
-# Aditya Raj Kar | Data Analyst Portfolio
+# Aditya Raj Kar | Personal Portfolio
 
 Personal portfolio of Aditya Raj Kar, a data analyst working in SQL, Python, Power BI and
 machine learning. B.Tech CSE (Internet of Things) at VIT Vellore.
