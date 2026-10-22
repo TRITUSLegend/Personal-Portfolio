@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
@@ -34,6 +35,15 @@ const Navbar = () => {
           aria-label="LinkedIn"
         >
           <FaLinkedinIn />
+        </a>
+        <a
+          href="https://leetcode.com/u/TRITUSLegend/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconBtn}
+          aria-label="LeetCode"
+        >
+          <SiLeetcode />
         </a>
         <Link
           to="contact"

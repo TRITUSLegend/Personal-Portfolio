@@ -12,6 +12,7 @@ const fadeIn = {
 const socials = [
   { label: 'GitHub', url: 'https://github.com/TRITUSLegend' },
   { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adityarajkar' },
+  { label: 'LeetCode', url: 'https://leetcode.com/u/TRITUSLegend/' },
   { label: 'Email', url: 'mailto:adityarajkar1105@gmail.com' },
 ];
 
