@@ -7,8 +7,8 @@ const RESUME_URL =
   'https://drive.google.com/file/d/1YUIBfrxyqb25o_wB2kEv1oNh8zHY3N5K/view?usp=sharing';
 
 const stats = [
-  { number: '99,441', label: 'Orders Analysed' },
   { number: '4', label: 'Projects Built' },
+  { number: '2', label: 'Certifications' },
   { number: '8.44', label: 'CGPA' },
 ];
 
