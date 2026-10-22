@@ -19,7 +19,7 @@ const ContactIcons = () => {
   return (
     <section className={styles.section} id="contact">
       <motion.div {...fadeIn}>
-        <p className={styles.sectionLabel}>{'// SECTION_04'}</p>
+        <p className={styles.sectionLabel}>{'// SECTION_05'}</p>
         <h2 className={styles.sectionTitle}>GET IN TOUCH.</h2>
         <p className={styles.subtitle}>
           Got a question, proposal, or project? Feel free to reach out.

@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 32px);
+}
+
+/* Right-hand card spanning both rows, so three cards fill a 2-column grid */
+.tall {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.block + .block {
+  margin-top: clamp(16px, 2vw, 24px);
+}
+
+.bullets {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
